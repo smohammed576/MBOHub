@@ -1,3 +1,7 @@
 <header class="header">
-    <a href="{{route('login')}}">login</a>
+    @auth
+        <p class="header__name">{{Auth::user()->name}}</p>
+    @else
+        <a href="{{route('login')}}" class="header__login">login</a>
+    @endauth
 </header>

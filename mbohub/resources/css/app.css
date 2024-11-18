@@ -1,3 +1,69 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  background: #5E3289;
+  min-height: 100vh;
+  font-size: 2rem;
+  font-family: "Gopher";
+  color: black;
+  font-weight: 600;
+}
+
+.main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 2rem 10rem;
+}
+
+::-webkit-scrollbar {
+  background: #6d3a9f;
+  width: 1.4rem;
+}
+::-webkit-scrollbar-thumb {
+  background: #542d7a;
+  border-radius: 5rem;
+}
+
+.header {
+  padding: 1rem;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  position: fixed;
+  width: 100%;
+}
+.header__login {
+  color: #efbf0d;
+}
+
+.heading {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 4rem;
+}
+.heading__banner {
+  width: 60%;
+  object-fit: cover;
+}
+
+.information {
+  padding: 2rem;
+}
+.information__text {
+  color: #efbf0d;
+  font-weight: 600;
+}
+
+/*# sourceMappingURL=app.css.map */

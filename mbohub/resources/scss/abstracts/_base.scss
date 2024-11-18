@@ -7,4 +7,21 @@ body{
     font-size: 2rem;
     font-family: map-get(variables.$baseVars, "font");
     color: map-get(variables.$baseVars, "color");
+    font-weight: 600;
+}
+
+.main{
+    @include mixins.flexBox;
+    flex-direction: column;
+    padding: 2rem 10rem;
+}
+
+::-webkit-scrollbar{
+    background: lighten(map-get(variables.$accentVars, "purple"), 6%);
+    width: 1.4rem;
+
+    &-thumb{
+        background: darken(map-get(variables.$accentVars, "purple"), 4%);
+        border-radius: 5rem;
+    }
 }

@@ -1,0 +1,13 @@
+@use "../../abstracts/variables";
+@use "../../abstracts/mixins";
+
+.heading{
+    width: 100%;
+    @include mixins.flexBox;
+    padding: 4rem;
+
+    &__banner{
+        width: 60%;
+        object-fit: cover;
+    }
+}
