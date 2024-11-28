@@ -1,6 +1,12 @@
+import GuestLayout from "@/Layouts/GuestLayout";
+
 function About(){
     return(
-        <h2>about page</h2>
+        <GuestLayout>
+            <section className="about">
+                about
+            </section>
+        </GuestLayout>
     );
 }
 

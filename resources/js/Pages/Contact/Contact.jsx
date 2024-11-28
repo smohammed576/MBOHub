@@ -1,12 +1,12 @@
-import AuthenticatedLayout from "@/Layouts/AuthenticatedLayout";
+import GuestLayout from "@/Layouts/GuestLayout";
 
 function Contact(){
     return(
-        <AuthenticatedLayout>
+        <GuestLayout>
             <section className="contact">
                 contact
             </section>
-        </AuthenticatedLayout>
+        </GuestLayout>
     );
 }
 
