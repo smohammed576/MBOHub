@@ -1,0 +1,36 @@
+@use "../../abstracts/variables";
+@use "../../abstracts/mixins";
+
+.single{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    gap: 2rem;
+    width: 100%;
+    padding: 2rem;
+
+    &__title{
+        font-size: 200%;
+    }
+
+    &__wrapper{
+        @include mixins.flexBox;
+        width: 100%;
+    }
+
+    &__image{
+        width: 50rem;
+        object-fit: cover;
+    }
+
+    &__information{
+        padding: 2rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+        align-items: start;
+        height: 100%;
+
+    }
+}

@@ -1,0 +1,23 @@
+@use "../../abstracts/variables";
+@use "../../abstracts/mixins";
+
+.header{
+    background: map-get(variables.$headerVars, "background");
+    padding: 1rem;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+
+    &__navigation{
+        @include mixins.flexBox;
+        gap: 2rem;
+    }
+    &__link{
+        text-decoration: none;
+        color: map-get(variables.$baseVars, "color");
+
+        &:hover{
+            color: map-get(variables.$headerVars, "color");
+        }
+    }
+}
