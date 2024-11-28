@@ -4,6 +4,7 @@ import { usePage } from "@inertiajs/react";
 function Post(){
     const post = usePage().props.post;
     const user = usePage().props.auth.user;
+    const csrf = document.querySelector('meta[name=csrf-token]').getAttribute("content");
     return(
         <AuthenticatedLayout>
             <section className="single">
@@ -11,7 +12,14 @@ function Post(){
                     <h2 className="single__title">{post.title}</h2>
                     {
                         user.name === post.author && (
-                            <a href={route('posts.edit', [post.id])} className="single__edit">edit</a>
+                            <span className="post__functions">
+                                <a href={route('posts.edit', [post.id])} className="single__edit">edit</a>
+                                <form action={route('posts.destroy', [post.id])} className="post__delete" method="post" >
+                                    <input type="hidden" name="_method" value="delete" />
+                                    <input type="hidden" name="_token" value={csrf}/>
+                                    <input type="submit" value="delete"/>
+                                </form>
+                            </span>
                         )
                     }
                 </span>
