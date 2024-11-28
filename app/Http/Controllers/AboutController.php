@@ -7,7 +7,7 @@ use Inertia\Inertia;
 
 class AboutController extends Controller
 {
-    public function About(){
+    public function about(){
         return Inertia::render('About/About');
     }
 }

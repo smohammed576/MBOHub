@@ -11,8 +11,8 @@ function Post(){
                     <h2 className="single__title">{post.title}</h2>
                     {
                         user.name === post.author && (
-                            <a href={route('posts.edit')} className="single__edit">edit</a>
-                        );
+                            <a href={route('posts.edit', [post.id])} className="single__edit">edit</a>
+                        )
                     }
                 </span>
                 <div className="single__wrapper">

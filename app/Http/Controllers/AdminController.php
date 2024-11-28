@@ -30,18 +30,9 @@ class AdminController extends Controller
      */
     public function store(Request $request)
     {
-        $data = $request->validate([
-            'title' => 'required',
-            'intro' => 'required',
-            'description' => 'required',
-            'image' => '',
-            'author' => 'required'
-        ]);
+        $validatedData = $this->validateData($request);
 
-        // return json_encode($data);
-
-        $post = new Post($data);
-        $post->save();
+        $post = Post::create($validatedData);
         
         return redirect(route('posts.posts'));
     }
@@ -59,7 +50,8 @@ class AdminController extends Controller
      */
     public function edit(string $id)
     {
-        return 'editingggg';
+        $post = Post::findOrFail($id);
+        return Inertia::render('Posts/Edit', ['post' => $post]);
     }
 
     /**
@@ -67,7 +59,12 @@ class AdminController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $post = Post::findOrFail($id);
+        $data = $this->validateData($request);
+        $post->update($data);
+        $post->save();
+
+        return redirect(route('posts.posts'));
     }
 
     /**
@@ -76,5 +73,17 @@ class AdminController extends Controller
     public function destroy(string $id)
     {
         //
+    }
+
+    protected function validateData(Request $request){
+        $data = $request->validate([
+            'title' => 'required',
+            'intro' => 'required',
+            'description' => 'required',
+            'image' => '',
+            'author' => 'required'
+        ]);
+
+        return $data;
     }
 }
