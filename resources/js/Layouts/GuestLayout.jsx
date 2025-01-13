@@ -3,7 +3,7 @@ import Navigation from "./Navigation";
 export default function GuestLayout({ children }) {
     return (
         <>
-            <Navigation/>
+            <Navigation class="header"/>
             <main className="main">{children}</main>
         </>
     );

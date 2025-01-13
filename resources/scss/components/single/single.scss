@@ -6,31 +6,48 @@
     flex-direction: column;
     justify-content: center;
     align-items: start;
+    padding: 2rem 20rem;
     gap: 2rem;
-    width: 100%;
-    padding: 2rem;
 
-    &__title{
-        font-size: 200%;
+    &__details{
+        width: 100%;
+        display: flex;
+        justify-content: start;
+        align-items: center;
+        gap: 2rem;
+
+        &--functions{
+            @include mixins.flexBox;
+            gap: 1rem;
+
+            &-edit{
+                text-decoration: none;
+                @include mixins.bluebutton;
+            }
+
+            &-delete{
+                border: none;
+                @include mixins.redbutton;
+            }
+        }
     }
 
     &__wrapper{
-        @include mixins.flexBox;
-        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: start;
+        gap: 2rem;
     }
 
     &__image{
-        width: 50rem;
-        object-fit: cover;
+        width: 55rem;
     }
 
     &__information{
-        padding: 2rem;
         display: flex;
         flex-direction: column;
         justify-content: start;
         align-items: start;
-        height: 100%;
-
+        gap: 2rem;
     }
 }

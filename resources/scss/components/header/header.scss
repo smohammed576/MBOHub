@@ -2,11 +2,20 @@
 @use "../../abstracts/mixins";
 
 .header{
-    background: map-get(variables.$headerVars, "background");
-    padding: 1rem;
+    padding: 1rem 20rem;
     display: flex;
-    justify-content: end;
+    justify-content: space-between;
     align-items: center;
+    background: darken(map-get(variables.$baseVars, "background"), 1%);
+
+    &__logo{
+        @include mixins.flexBox;
+
+        &--image{
+            width: 12rem;
+            object-fit: contain;
+        }
+    }
 
     &__navigation{
         @include mixins.flexBox;
@@ -15,9 +24,36 @@
     &__link{
         text-decoration: none;
         color: map-get(variables.$baseVars, "color");
+        font-size: 90%;
 
         &:hover{
-            color: map-get(variables.$headerVars, "color");
+            cursor: pointer;
+            color: map-get(variables.$colorVars, "selectiveyellow");
+        }
+    }
+    &__user{
+        @include mixins.flexBox;
+        gap: 2rem;
+
+        &--name{
+            text-transform: uppercase;
+            font-size: 90%;
+        }
+
+        &--create{
+            text-decoration: none;
+            @include mixins.yellowbutton;
+        }
+    }
+
+    &__auth{
+        @include mixins.flexBox;
+        gap: 1rem;
+        font-size: 90%;
+        
+        &--link{
+            text-decoration: none;
+            color: map-get(variables.$baseVars, "color");
         }
     }
 }

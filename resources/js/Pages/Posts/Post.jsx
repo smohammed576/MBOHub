@@ -9,15 +9,15 @@ function Post(){
         <AuthenticatedLayout>
             <section className="single">
                 <span className="single__details">
-                    <h2 className="single__title">{post.title}</h2>
+                    <h2 className="single__details--title">{post.title}</h2>
                     {
                         user.name === post.author && (
-                            <span className="post__functions">
-                                <a href={route('posts.edit', [post.id])} className="single__edit">edit</a>
-                                <form action={route('posts.destroy', [post.id])} className="post__delete" method="post" >
+                            <span className="single__details--functions">
+                                <a href={route('posts.edit', [post.id])} className="single__details--functions-edit">edit</a>
+                                <form action={route('posts.destroy', [post.id])} className="single__details--functions-form" method="post" >
                                     <input type="hidden" name="_method" value="delete" />
                                     <input type="hidden" name="_token" value={csrf}/>
-                                    <input type="submit" value="delete"/>
+                                    <input type="submit" value="delete" className="single__details--functions-delete"/>
                                 </form>
                             </span>
                         )
@@ -28,7 +28,7 @@ function Post(){
                         post.image ? 
                             <img src={post.image} alt={post.title} className="single__image" />
                          :
-                            <>no image</>
+                            <img src="https://rezista.in/wp-content/uploads/2020/07/Image-Placeholder-Dark.png" alt="placeholder image" className="single__image" />
                     }
                     <article className="single__information">
                         <h3 className="single__information--intro">{post.intro}</h3>

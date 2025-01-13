@@ -1,10 +1,21 @@
 $baseVars: (
-    "background": white,
-    "color": black,
+    "background": #020d16,
+    "color": #fff,
     "font": sans-serif
 );
 
 $headerVars: (
-    "background": rgb(149, 150, 151),
+    "background": #5E3289,
     "color": red
+);
+
+$colorVars: (
+    "purplejam": #5E3289,
+    "orangered": #e03344,
+    "fountainblue": #43b3c4,
+    "selectiveyellow": #efbf0d
+);
+
+$accentVars: (
+    "greycolor": #a19f9f
 );

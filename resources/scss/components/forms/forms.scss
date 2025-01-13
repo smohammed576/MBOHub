@@ -1,2 +1,27 @@
 @use "../../abstracts/variables";
 @use "../../abstracts/mixins";
+
+.create{
+    @include mixins.flexBox;
+    flex-direction: column;
+    width: 100%;
+    padding: 1rem;
+
+    &__form{
+        @include mixins.flexBox;
+        flex-direction: column;
+        gap: 0.3rem;
+        padding: 1rem;
+
+        &--input{
+            border: none;
+            padding: 1rem;
+            font-size: 90%;
+        }
+
+        &--submit{
+            border: none;
+            @include mixins.yellowbutton;
+        }
+    }
+}
