@@ -567,3 +567,9 @@ export default function Welcome({ auth, laravelVersion, phpVersion }) {
         </>
     );
 }
+
+php artisan migrate
+    migrate alle database aanpassingen
+
+php artisan make:controller NaamController
+    maak een nieuwe controller aan, in een controller maak je een public function en vanaf daar kan je paginas returnen en database gegevens opvragen en meegeven aan 

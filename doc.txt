@@ -1,0 +1,3 @@
+MBO Hub project
+
+Ik heb een Laravel project aangemaakt en React toegevoegd aan dit project. Dit heb ik gedaan toen ik breeze installeerde, ik kon toen gelijk React met Inertia toevoegen. Ik heb dit gedaan omdat wij zo React als front end kunnen gebruiken

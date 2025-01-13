@@ -5,24 +5,26 @@ function Posts(){
     const posts = usePage().props.posts;
     console.log(posts);
     const getPosts = posts?.map(post => 
-        <article className="post" key={post.id}>
-            <a href={`post/${post.id}`} className="post__link">
-                <h2 className="post__title">{post.title}</h2>
-            </a>
-            <p className="post__intro">{post.intro}</p>
+        <div className="post" key={post.id}>
             {
                 post.image ?
                     <img src={post.image} alt={post.title} className="post__image" />
                 :
-                    <>no image</>
+                    <img src="https://rezista.in/wp-content/uploads/2020/07/Image-Placeholder-Dark.png" alt="placeholder image" className="post__image" />
 
             }
-        </article>
+            <article className="post__info">
+                <a href={`post/${post.id}`} className="post__info--link">
+                    <h2 className="post__info--link-title">{post.title}</h2>
+                </a>
+                <p className="post__info--intro">{post.intro}</p>
+            </article>
+        </div>
     );
     return(
         <AuthenticatedLayout>
             <section className="posts">
-                <a href={route('posts.create')} className="posts__create">create post</a>
+                <p className="posts__amount">{posts?.length} POSTS</p>
                 <div className="posts__list">
                     {getPosts}
                 </div>

@@ -2,5 +2,67 @@
 @use "../../abstracts/mixins";
 
 .posts{
-    background: navajowhite;
+    width: 100%;
+    padding: 0 20rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    gap: 0.1rem;
+
+    &__amount{
+        color: map-get(variables.$accentVars, "greycolor");
+        font-size: 80%;
+    }
+
+    &__list{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: start;
+        width: 100%;
+        border-top: 0.1rem solid map-get(variables.$accentVars, "greycolor");
+    }
+}
+
+.post{
+    width: 100%;
+    display: flex;
+    justify-content: start;
+    align-items: start;
+    gap: 1rem;
+    padding: 1rem 0;
+
+    &__image{
+        height: 15rem;
+        width: 18rem;
+        object-fit: cover;
+    }
+
+    &__info{
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+        align-items: start;
+        gap: 0.2rem;
+
+        &--link{
+            text-decoration: none;
+            color: map-get(variables.$baseVars, "color");
+
+            &-title{
+                font-size: 140%;
+
+                &:hover{
+                    cursor: pointer;
+                    color: map-get(variables.$colorVars, "selectiveyellow");
+                }
+            }
+        }
+
+        &--intro{
+            color: map-get(variables.$accentVars, "greycolor");
+            font-size: 90%;
+        }
+    }
 }

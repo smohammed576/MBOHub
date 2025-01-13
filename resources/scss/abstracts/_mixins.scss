@@ -1,5 +1,46 @@
+@use "variables";
+
 @mixin flexBox{
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+@mixin yellowbutton{
+    background: map-get(variables.$colorVars, "selectiveyellow");
+    color: map-get(variables.$baseVars, "color");
+    font-weight: 600;
+    padding: 0.8rem;
+    font-size: 80%;
+    border-radius: 0.2rem;
+
+    &:hover{
+        background: darken(map-get(variables.$colorVars, "selectiveyellow"), 2%);
+    }
+}
+
+@mixin bluebutton{
+    background: map-get(variables.$colorVars, "fountainblue");
+    color: map-get(variables.$baseVars, "color");
+    font-weight: 600;
+    padding: 0.8rem;
+    font-size: 80%;
+    border-radius: 0.2rem;
+
+    &:hover{
+        background: darken(map-get(variables.$colorVars, "fountainblue"), 2%);
+    }
+}
+
+@mixin redbutton{
+    background: map-get(variables.$colorVars, "orangered");
+    color: map-get(variables.$baseVars, "color");
+    font-weight: 600;
+    padding: 0.8rem;
+    font-size: 80%;
+    border-radius: 0.2rem;
+
+    &:hover{
+        background: darken(map-get(variables.$colorVars, "orangered"), 2%);
+    }
 }

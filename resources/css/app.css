@@ -10,8 +10,8 @@ html {
 
 body {
   min-height: 100vh;
-  background: white;
-  color: black;
+  background: #020d16;
+  color: #fff;
   font-family: sans-serif;
   font-size: 2rem;
 }
@@ -22,15 +22,24 @@ body {
   align-items: center;
   flex-direction: column;
   gap: 2rem;
-  padding: 2rem;
+  padding: 2rem 0;
 }
 
 .header {
-  background: rgb(149, 150, 151);
-  padding: 1rem;
+  padding: 1rem 20rem;
   display: flex;
-  justify-content: end;
+  justify-content: space-between;
   align-items: center;
+  background: #020a11;
+}
+.header__logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.header__logo--image {
+  width: 12rem;
+  object-fit: contain;
 }
 .header__navigation {
   display: flex;
@@ -40,14 +49,103 @@ body {
 }
 .header__link {
   text-decoration: none;
-  color: black;
+  color: #fff;
+  font-size: 90%;
 }
 .header__link:hover {
-  color: red;
+  cursor: pointer;
+  color: #efbf0d;
+}
+.header__user {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+.header__user--name {
+  text-transform: uppercase;
+  font-size: 90%;
+}
+.header__user--create {
+  text-decoration: none;
+  background: #efbf0d;
+  color: #fff;
+  font-weight: 600;
+  padding: 0.8rem;
+  font-size: 80%;
+  border-radius: 0.2rem;
+}
+.header__user--create:hover {
+  background: #e5b70c;
+}
+.header__auth {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  font-size: 90%;
+}
+.header__auth--link {
+  text-decoration: none;
+  color: #fff;
 }
 
 .posts {
-  background: navajowhite;
+  width: 100%;
+  padding: 0 20rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+  gap: 0.1rem;
+}
+.posts__amount {
+  color: #a19f9f;
+  font-size: 80%;
+}
+.posts__list {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+  width: 100%;
+  border-top: 0.1rem solid #a19f9f;
+}
+
+.post {
+  width: 100%;
+  display: flex;
+  justify-content: start;
+  align-items: start;
+  gap: 1rem;
+  padding: 1rem 0;
+}
+.post__image {
+  height: 15rem;
+  width: 18rem;
+  object-fit: cover;
+}
+.post__info {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: start;
+  gap: 0.2rem;
+}
+.post__info--link {
+  text-decoration: none;
+  color: #fff;
+}
+.post__info--link-title {
+  font-size: 140%;
+}
+.post__info--link-title:hover {
+  cursor: pointer;
+  color: #efbf0d;
+}
+.post__info--intro {
+  color: #a19f9f;
+  font-size: 90%;
 }
 
 .single {
@@ -55,30 +153,95 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: start;
+  padding: 2rem 20rem;
   gap: 2rem;
-  width: 100%;
-  padding: 2rem;
 }
-.single__title {
-  font-size: 200%;
+.single__details {
+  width: 100%;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: 2rem;
+}
+.single__details--functions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+.single__details--functions-edit {
+  text-decoration: none;
+  background: #43b3c4;
+  color: #fff;
+  font-weight: 600;
+  padding: 0.8rem;
+  font-size: 80%;
+  border-radius: 0.2rem;
+}
+.single__details--functions-edit:hover {
+  background: #3cafc0;
+}
+.single__details--functions-delete {
+  border: none;
+  background: #e03344;
+  color: #fff;
+  font-weight: 600;
+  padding: 0.8rem;
+  font-size: 80%;
+  border-radius: 0.2rem;
+}
+.single__details--functions-delete:hover {
+  background: #df2a3c;
 }
 .single__wrapper {
   display: flex;
   justify-content: center;
-  align-items: center;
-  width: 100%;
+  align-items: start;
+  gap: 2rem;
 }
 .single__image {
-  width: 50rem;
-  object-fit: cover;
+  width: 55rem;
 }
 .single__information {
-  padding: 2rem;
   display: flex;
   flex-direction: column;
   justify-content: start;
   align-items: start;
-  height: 100%;
+  gap: 2rem;
+}
+
+.create {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  padding: 1rem;
+}
+.create__form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 0.3rem;
+  padding: 1rem;
+}
+.create__form--input {
+  border: none;
+  padding: 1rem;
+  font-size: 90%;
+}
+.create__form--submit {
+  border: none;
+  background: #efbf0d;
+  color: #fff;
+  font-weight: 600;
+  padding: 0.8rem;
+  font-size: 80%;
+  border-radius: 0.2rem;
+}
+.create__form--submit:hover {
+  background: #e5b70c;
 }
 
 /*# sourceMappingURL=app.css.map */
