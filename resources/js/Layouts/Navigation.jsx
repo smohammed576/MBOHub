@@ -12,16 +12,24 @@ function Navigation(props){
                 <a className="header__link" href={route('posts.posts')}>POSTS</a>
                 <a className="header__link" href={route('about.about')}>ABOUT</a>
                 <a className="header__link" href={route('contact.contact')}>CONTACT</a>
+                <a href={route('news.index')} className="header__link">NEWS</a>
                 {
                     user ? 
                         <span className="header__user">
                             <p className="header__user--name">{user.name}</p>
-                            <a href={route('posts.create')} className="header__user--create">+ CREATE</a>
+                            {/* <a href={route('posts.create')} className="header__user--create">+ CREATE</a> */}
+                            <div className="header__user--wrapper">
+                                <button className="header__user--create">+ CREATE</button>
+                                <span className="header__user--options">
+                                    <a href={route('posts.create')} className="header__user--options-option">Post</a>
+                                    <a href={route('news.create')} className="header__user--options-option">News</a>
+                                </span>
+                            </div>
                         </span>
                         :
                         <span className="header__auth">
-                            <a href={route('login')} className="header__auth--link">LOGIN</a>
-                            <a href={route('register')} className="header__auth--link">REGISTER</a>
+                            <a href={route('login')} className="header__auth--login">LOGIN</a>
+                            <a href={route('register')} className="header__auth--register">REGISTER</a>
                         </span>
                 }
             </nav>

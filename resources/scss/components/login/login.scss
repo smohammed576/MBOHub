@@ -1,0 +1,87 @@
+@use "../../abstracts/variables";
+@use "../../abstracts/mixins";
+
+.login{
+    @include mixins.flexBox;
+    width: 100%;
+    height: 80vh;
+
+    &__form{
+        background: map-get(variables.$colorVars, "orangereds");
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: start;
+        gap: 1rem;
+        padding: 1rem 2rem;
+        border-radius: 0.4rem;
+
+        &--wrapper{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: start;
+            gap: 0.4rem;
+        }
+
+        &--label{
+            font-size: 80%;
+        }
+
+        &--input{
+            border: none;
+            padding: 0.4rem;
+            font-size: 90%;
+            border-radius: 0.4rem;
+        }
+
+        &--remember{
+            @include mixins.flexBox;
+            gap: 1rem;
+            font-size: 80%;
+
+            &-checkbox{
+                appearance: none;
+                background: white;
+                width: 1.4rem;
+                aspect-ratio: 1/1;
+                border-radius: 0.2rem;
+
+                &:checked{
+                    background: map-get(variables.$colorVars, "purplejam");
+                }
+            }
+        }
+    
+        &--request{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: start;
+            width: 100%;
+            gap: 1rem;
+
+            &-link{
+                font-size: 80%;
+                color: map-get(variables.$baseVars, "color");
+                text-decoration: none;
+
+                &:hover{
+                    cursor: pointer;
+                    text-decoration: underline;
+                    color: map-get(variables.$colorVars, "fountainblue");
+                }
+            }
+        }
+
+        &--submit{
+            @include mixins.purplebutton;
+            background: map-get(variables.$baseVars, "background");
+            border: none;
+
+            &:hover{
+                background: lighten(map-get(variables.$baseVars, "background"), 2%);
+            }
+        }
+    }
+}
