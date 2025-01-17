@@ -1,0 +1,42 @@
+@use "../../abstracts/variables";
+@use "../../abstracts/mixins";
+
+.heading{
+    @include mixins.flexBox;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 2rem 20rem;
+
+    &__info{
+        background: map-get(variables.$colorVars, "purplejam");
+        padding: 2rem;
+        border-radius: 0.4rem;
+    }
+}
+
+.welcome{
+    width: 100%;
+    padding: 2rem 20rem;
+    @include mixins.flexBox;
+    gap: 2rem;
+
+    &__link{
+        @include mixins.flexBox;
+        text-decoration: none;
+        color: map-get(variables.$baseVars, "color");
+    }
+
+    &__item{
+        background: map-get(variables.$colorVars, "orangereds");
+        padding: 1rem;
+        border-radius: 0.4rem;
+
+        &--title{
+            font-size: 100%;
+        }
+        
+        &--info{
+            font-size: 90%;
+        }
+    }
+}

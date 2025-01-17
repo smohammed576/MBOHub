@@ -6,7 +6,7 @@ function Navigation(props){
     return(
         <header className={props.class}>
             <a href="/" className="header__logo">
-                <img src="/images/logo.png" alt="mbohub logo" className="header__logo--image" />
+                <img src="/src/images/logo.png" alt="mbohub logo" className="header__logo--image" />
             </a>
             <nav className="header__navigation">
                 <a className="header__link" href={route('posts.posts')}>POSTS</a>
@@ -16,8 +16,6 @@ function Navigation(props){
                 {
                     user ? 
                         <span className="header__user">
-                            <p className="header__user--name">{user.name}</p>
-                            {/* <a href={route('posts.create')} className="header__user--create">+ CREATE</a> */}
                             <div className="header__user--wrapper">
                                 <button className="header__user--create">+ CREATE</button>
                                 <span className="header__user--options">

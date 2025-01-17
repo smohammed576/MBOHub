@@ -45,7 +45,9 @@ class NewsAdminController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $news = News::where('id', $id)->get();
+        $users = User::all();
+        return Inertia::render('News/Post', ['news' => $news, 'users' => $users]);
     }
 
     /**
