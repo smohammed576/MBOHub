@@ -1,0 +1,13 @@
+@use "../../abstracts/variables";
+@use "../../abstracts/mixins";
+
+.events{
+    width: 40%;
+    background: red;
+
+    &__wrapper{
+        @include mixins.flexBox;
+        flex-direction: column;
+        gap: 1rem;
+    }
+}
