@@ -33,7 +33,7 @@
 }
 
 @mixin redbutton{
-    background: map-get(variables.$colorVars, "orangered");
+    background: map-get(variables.$colorVars, "orangereds");
     color: map-get(variables.$baseVars, "color");
     font-weight: 600;
     padding: 0.8rem;
@@ -41,6 +41,20 @@
     border-radius: 0.2rem;
 
     &:hover{
-        background: darken(map-get(variables.$colorVars, "orangered"), 2%);
+        background: darken(map-get(variables.$colorVars, "orangereds"), 2%);
+    }
+}
+
+
+@mixin purplebutton{
+    background: map-get(variables.$colorVars, "purplejam");
+    color: map-get(variables.$baseVars, "color");
+    font-weight: 600;
+    padding: 0.8rem;
+    font-size: 80%;
+    border-radius: 0.2rem;
+
+    &:hover{
+        background: darken(map-get(variables.$colorVars, "purplejam"), 2%);
     }
 }

@@ -24,7 +24,7 @@
     &__link{
         text-decoration: none;
         color: map-get(variables.$baseVars, "color");
-        font-size: 90%;
+        font-size: 80%;
 
         &:hover{
             cursor: pointer;
@@ -37,23 +37,58 @@
 
         &--name{
             text-transform: uppercase;
-            font-size: 90%;
+            font-size: 80%;
+        }
+
+        &--wrapper{
+            position: relative;
+            &:hover .header__user--options{
+                display: flex;
+            }
         }
 
         &--create{
-            text-decoration: none;
+            border: none;
             @include mixins.yellowbutton;
+            font-size: 75%;
+        }
+
+        &--options{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: start;
+            background: map-get(variables.$colorVars, "selectiveyellow");
+            display: none;
+            position: absolute;
+            width: 100%;
+
+            &-option{
+                padding: 0.2rem;
+                text-decoration: none;
+                color: map-get(variables.$baseVars, "color");
+                border-bottom: 0.2rem solid white;
+                width: 100%;
+            }
         }
     }
 
     &__auth{
         @include mixins.flexBox;
         gap: 1rem;
-        font-size: 90%;
+        font-size: 80%;
         
-        &--link{
+        &--login{
             text-decoration: none;
             color: map-get(variables.$baseVars, "color");
+            @include mixins.bluebutton;
         }
+
+        &--register{
+            text-decoration: none;
+            color: map-get(variables.$baseVars, "color");
+            @include mixins.redbutton;
+        }
+
     }
 }

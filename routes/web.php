@@ -3,6 +3,7 @@
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\NewsAdminController;
 use App\Http\Controllers\PostsController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Foundation\Application;
@@ -30,7 +31,8 @@ Route::middleware('auth')->group(function () {
     Route::get('/post/{post}', [PostsController::class, 'post'])->name('posts.post');
 
     Route::resources([
-        'posts' => AdminController::class
+        'posts' => AdminController::class,
+        'news' => NewsAdminController::class
     ]);
 });
 Route::get('/about', [AboutController::class, 'about'])->name('about.about');
