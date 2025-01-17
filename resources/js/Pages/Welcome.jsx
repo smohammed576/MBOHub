@@ -5,7 +5,7 @@ function Welcome(){
         <GuestLayout>
             <section className="heading">
                 <video width="720" controls autoPlay muted>
-                    <source src="/src/videos/MBO-HUB_Introductie Video DEF.mp4" type="video/mp4"/>
+                    <source className="video" src="/src/videos/MBO-HUB_Introductie Video DEF.mp4" type="video/mp4"/>
                 </video>
                 <article className="heading__info">
                     <p className="heading__info--text">

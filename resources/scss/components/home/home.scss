@@ -4,8 +4,9 @@
 .heading{
     @include mixins.flexBox;
     flex-direction: column;
-    gap: 2rem;
+    gap: 10rem;
     padding: 2rem 20rem;
+    
 
     &__info{
         background: map-get(variables.$colorVars, "purplejam");
@@ -16,7 +17,7 @@
 
 .welcome{
     width: 100%;
-    padding: 2rem 20rem;
+    padding:  0.2rem;
     @include mixins.flexBox;
     gap: 2rem;
 
@@ -29,7 +30,7 @@
     &__item{
         background: map-get(variables.$colorVars, "orangereds");
         padding: 1rem;
-        border-radius: 0.4rem;
+        border-radius: 1rem;
 
         &--title{
             font-size: 100%;
