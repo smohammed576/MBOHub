@@ -924,6 +924,24 @@ body {
   color: rgba(255, 255, 255, 0.4);
 }
 
+@media screen and (max-width: 80rem) {
+  .home {
+    flex-direction: column;
+    width: 100%;
+  }
+  .heading {
+    width: 100% !important;
+  }
+  .heading__video {
+    width: 100%;
+  }
+  .events {
+    width: 100%;
+  }
+  .welcome {
+    flex-direction: column;
+  }
+}
 @media screen and (max-width: 27rem) {
   .header {
     padding: 1rem;
