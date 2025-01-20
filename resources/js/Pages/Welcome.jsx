@@ -63,7 +63,7 @@ function Welcome() {
                             onClick={() => setDisplayform((value) => !value)}
                             className="events__create"
                         >
-                            + Add Event
+                            { displayform ? 'Close' : '+ Add Event'}
                         </button>
                     )}
 

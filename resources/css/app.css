@@ -314,7 +314,7 @@ body {
 .events__wrapper {
   display: flex;
   flex-wrap: wrap;
-  justify-content: flex-start !important;
+  justify-content: flex-start;
   align-items: flex-start;
   flex-direction: row;
   gap: 2rem;
@@ -324,9 +324,9 @@ body {
 }
 .events__wrapper .tile__wrapper {
   width: 100%;
-  max-width: 600px;
+  max-width: 60rem;
   border-radius: 0.5rem;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0.4rem 0.8rem rgba(0, 0, 0, 0.1);
   overflow: hidden;
 }
 .events__wrapper .tile__wrapper .row {
@@ -344,7 +344,7 @@ body {
 }
 .events__wrapper .tile__wrapper .tile__image {
   width: 100%;
-  height: 150px;
+  height: 15rem;
   background-size: cover;
   background-position: center;
   border-radius: 0.5rem 0 0 0.5rem;
@@ -662,21 +662,54 @@ body {
   flex-direction: column;
   width: 100%;
   padding: 1rem;
+  height: 77vh;
 }
 .create__form {
   display: flex;
-  justify-content: center;
-  align-items: center;
   flex-direction: column;
-  gap: 0.3rem;
-  padding: 1rem;
+  justify-content: center;
+  align-items: start;
+  gap: 1rem;
+  padding: 2rem;
+  background: #e03344;
+  width: 60rem;
+  border-radius: 1rem;
+}
+.create__form--title {
+  font-size: 120%;
+}
+.create__form--wrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+  gap: 0.4rem;
+}
+.create__form--label {
+  font-size: 85%;
 }
 .create__form--input {
   border: none;
   padding: 1rem;
+  width: 100%;
   font-size: 90%;
+  background: #e34958;
+  color: #fff;
+}
+.create__form--input::placeholder {
+  color: rgba(255, 255, 255, 0.4);
+}
+.create__form--input:focus {
+  outline: none;
 }
 .create__form--submit {
+  width: 100%;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+}
+.create__form--submit-button {
   border: none;
   background: #efbf0d;
   color: #fff;
@@ -685,7 +718,7 @@ body {
   font-size: 80%;
   border-radius: 0.2rem;
 }
-.create__form--submit:hover {
+.create__form--submit-button:hover {
   background: #e5b70c;
 }
 
@@ -695,6 +728,7 @@ body {
   justify-content: center;
   align-items: center;
   padding: 2rem;
+  height: 76vh;
 }
 .newsform__form {
   background: #e03344;
@@ -863,7 +897,6 @@ body {
 }
 .news__post--wrapper {
   padding: 1rem;
-  background: blue;
   width: 100%;
   height: 100%;
 }
@@ -891,22 +924,144 @@ body {
   color: rgba(255, 255, 255, 0.4);
 }
 
-@media screen and (max-width: 80rem) {
+@media screen and (max-width: 27rem) {
+  .header {
+    padding: 1rem;
+    font-size: 80%;
+  }
+  .header__logo--image {
+    width: 8rem;
+    object-fit: contain;
+  }
+  .header__navigation {
+    gap: 0.4rem;
+  }
+  .header__user--create {
+    padding: 0.4rem;
+    font-size: 65%;
+  }
   .home {
-    flex-direction: column;
-    width: 100%;
-  }
-  .heading {
-    width: 100% !important;
-  }
-  .heading__video {
-    width: 100%;
+    padding: 0 1rem;
   }
   .events {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    background: none;
+  }
+  .events__form {
+    background: blue;
+  }
+  .events__pagination {
+    width: 100%;
+    padding: 0 10rem;
+  }
+  .events__wrapper .tile__wrapper .col-md-3 {
     width: 100%;
   }
+  .events__wrapper .tile__wrapper .tile__content .calendar-item__date {
+    font-size: 100%;
+  }
+  .events__wrapper .tile__wrapper .tile__content .calendar-item__title {
+    font-size: 120%;
+    color: #fff;
+  }
+  .events__wrapper .tile__wrapper .tile__content .calendar-item__text {
+    font-size: 100%;
+  }
   .welcome {
+    padding: 0 4rem;
+    width: 100%;
+  }
+  .welcome__link {
+    width: 100%;
+  }
+  .posts {
+    padding: 0 1rem;
+  }
+  .single {
+    padding: 1rem;
+    height: 83vh;
+    justify-content: start;
+  }
+  .single__details {
+    justify-content: center;
+    padding: 0;
+  }
+  .single__wrapper {
     flex-direction: column;
+    gap: 1rem;
+  }
+  .single__image {
+    width: 100%;
+  }
+  .single__information {
+    align-items: center;
+    gap: 1rem;
+  }
+  .single__information--text {
+    text-align: center;
+  }
+  .about {
+    padding: 0 1rem;
+  }
+  .create {
+    min-height: 83vh;
+    justify-content: start;
+    padding: 8rem 1rem;
+    width: 100%;
+  }
+  .create__form {
+    gap: 1rem;
+    width: 100%;
+  }
+  .newsform {
+    height: 83vh;
+    align-items: start;
+    padding: 2rem;
+  }
+  .news {
+    padding: 0 1rem;
+    height: 83vh;
+    justify-content: start;
+  }
+  .news__list {
+    padding: 0 4rem;
+    justify-content: center;
+  }
+  .news__item {
+    width: 100%;
+  }
+  .news__item--info-title {
+    font-size: 120%;
+  }
+  .news__item--info-description {
+    font-size: 100%;
+  }
+  .news__post {
+    padding: 0;
+    flex-direction: column;
+    gap: 0;
+    height: 83vh;
+  }
+  .news__post--figure {
+    width: 100%;
+    padding: 1rem;
+  }
+  .news__post--figure-image {
+    width: 100%;
+  }
+  .news__post--description {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    gap: 1rem;
+  }
+  .footer {
+    justify-content: center;
   }
 }
 
