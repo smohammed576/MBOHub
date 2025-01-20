@@ -13,6 +13,6 @@ class ContactController extends Controller
 
     public function mail(Request $request){
         mail('smohammed0576@gmail.com', 'Contact', $request['message']);
-        return 'yuh';
+        return redirect(route('welcome'));
     }
 }
