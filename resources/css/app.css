@@ -229,7 +229,6 @@ body {
   gap: 2rem;
   width: 100%;
   padding: 2rem 30rem;
-  padding-bottom: 15rem;
 }
 .home .heading {
   display: flex;
@@ -435,40 +434,74 @@ body {
 }
 
 .welcome {
-  width: 90%;
-  padding: 2rem 0;
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 2rem;
+  padding: 1rem;
 }
 .welcome__link {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  width: 22%;
+  color: #fff;
   text-decoration: none;
-  color: inherit;
+  transition: 0.4s all;
+}
+.welcome__link:focus {
+  outline: none;
+}
+.welcome__link:hover {
+  cursor: pointer;
+  transform: scale(1.02);
+}
+.welcome__figure {
+  width: 100%;
+  height: 20rem;
+  position: relative;
+  transition: 0.4s all;
+}
+.welcome__figure:hover .welcome__figure--title {
+  opacity: 1;
+}
+.welcome__figure--title {
+  position: absolute;
+  background: rgba(0, 0, 255, 0.4);
+  width: 80%;
+  display: flex;
+  justify-content: end;
+  top: 10%;
+  right: 0;
+  padding: 1rem;
+  opacity: 0;
+  transition: 0.4s all;
+  border-radius: 1rem 0 0 1rem;
+}
+.welcome__figure--image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 0 3rem 0 0;
+  background: pink;
 }
 .welcome__item {
-  background: #e03344;
-  padding: 2rem;
-  border-radius: 1rem;
-  text-align: center;
-  transition: transform 0.3s, box-shadow 0.3s;
-}
-.welcome__item:hover {
-  transform: translateY(-0.5rem);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-}
-.welcome__item--title {
-  font-size: 2rem;
-  font-weight: bold;
-  margin-bottom: 1rem;
+  padding: 2rem 1rem 4rem 1rem;
+  background: #5E3289;
+  font-size: 80%;
+  border-radius: 0 0 0 3rem;
 }
 .welcome__item--info {
-  font-size: 1.6rem;
-  color: white;
-  line-height: 2rem;
+  overflow: hidden;
+  overflow-y: scroll;
+  height: 20rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: start;
+  gap: 2rem;
+  padding: 0.4rem;
+}
+.welcome__item--info::-webkit-scrollbar {
+  display: none;
 }
 
 .posts {

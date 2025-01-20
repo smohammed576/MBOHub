@@ -174,29 +174,68 @@ function Welcome() {
 
             <section className="welcome">
                 <a href="/post" className="welcome__link">
+                    <figure className="welcome__figure">
+                        <span className="welcome__figure--title">POSTS</span>
+                        <img src="https://media.discordapp.net/attachments/1311995396112781352/1330860307853082624/Amsterdam-750.png?ex=678f83bf&is=678e323f&hm=d56cd8e9693e0e9ed1a314a7c458fb9d6490fd872e000b1a991d58b0c67fdc18&=&format=webp&quality=lossless&width=960&height=323" alt="placeholder image" className="welcome__figure--image" />
+                    </figure>
                     <article className="welcome__item">
-                        <h3 className="welcome__item--title">POSTS</h3>
-                        <p className="welcome__item--info">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi, voluptas
-                            laudantium debiti
-                        </p>
+                        <div className="welcome__item--info">
+                            <p className="welcome__item--info-text">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi, voluptas
+                                laudantium debiti
+                            </p>
+                            <p className="welcome__item--info-text">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi, voluptas
+                                laudantium debiti
+                            </p>
+                            <p className="welcome__item--info-text">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi, voluptas
+                                laudantium debiti
+                            </p>
+                        </div>
                     </article>
                 </a>
                 <a href="/news" className="welcome__link">
+                <figure className="welcome__figure">
+                <span className="welcome__figure--title">NEWS</span>
+                        <img src="https://media.discordapp.net/attachments/1311995396112781352/1330860307853082624/Amsterdam-750.png?ex=678f83bf&is=678e323f&hm=d56cd8e9693e0e9ed1a314a7c458fb9d6490fd872e000b1a991d58b0c67fdc18&=&format=webp&quality=lossless&width=960&height=323" alt="placeholder image" className="welcome__figure--image" />
+                    </figure>
                     <article className="welcome__item">
-                        <h3 className="welcome__item--title">NEWS</h3>
                         <p className="welcome__item--info">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi, voluptas
-                            laudantium debiti
+                            <p className="welcome__item--info-text">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi, voluptas
+                                laudantium debiti
+                            </p>
+                            <p className="welcome__item--info-text">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi, voluptas
+                                laudantium debiti
+                            </p>
+                            <p className="welcome__item--info-text">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi, voluptas
+                                laudantium debiti
+                            </p>
                         </p>
                     </article>
                 </a>
                 <a href="/contact" className="welcome__link">
+                <figure className="welcome__figure">
+                        <span className="welcome__figure--title">CONTACT</span>
+                        <img src="https://media.discordapp.net/attachments/1311995396112781352/1330860307853082624/Amsterdam-750.png?ex=678f83bf&is=678e323f&hm=d56cd8e9693e0e9ed1a314a7c458fb9d6490fd872e000b1a991d58b0c67fdc18&=&format=webp&quality=lossless&width=960&height=323" alt="placeholder image" className="welcome__figure--image" />
+                    </figure>
                     <article className="welcome__item">
-                        <h3 className="welcome__item--title">CONTACT</h3>
                         <p className="welcome__item--info">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi, voluptas
-                            laudantium debiti
+                            <p className="welcome__item--info-text">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi, voluptas
+                                laudantium debiti
+                            </p>
+                            <p className="welcome__item--info-text">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi, voluptas
+                                laudantium debiti
+                            </p>
+                            <p className="welcome__item--info-text">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi, voluptas
+                                laudantium debiti
+                            </p>
                         </p>
                     </article>
                 </a>

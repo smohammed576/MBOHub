@@ -8,7 +8,6 @@
   gap: 2rem;
   width: 100%;
   padding: 2rem 30rem;
-  padding-bottom: 15rem;
 
   .heading {
     display: flex;
@@ -251,41 +250,82 @@
   }
 }
 
-.welcome {
-  width: 90%;
-  padding: 2rem 0;
+.welcome{
+  width: 100%;
   @include mixins.flexBox;
   gap: 2rem;
+  padding: 1rem;
 
-  &__link {
-    @include mixins.flexBox;
+  &__link{
+    width: 22%;
+    color: map-get(variables.$baseVars, "color");
     text-decoration: none;
-    color: inherit;
+    transition: 0.4s all;
+
+    &:focus{
+      outline: none;
+    }
+
+    &:hover{
+      cursor: pointer;
+      transform: scale(1.02);
+    }
   }
 
-  &__item {
-    background: map-get(variables.$colorVars, "orangereds");
-    padding: 2rem;
-    border-radius: 1rem;
-    text-align: center;
-    transition: transform 0.3s, box-shadow 0.3s;
+  &__figure{
+    width: 100%;
+    height: 20rem;
+    position: relative;
+    transition: 0.4s all;
 
-    &:hover {
-      transform: translateY(-0.5rem);
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    &:hover &--title{
+      opacity: 1;
+    }
+    
+    &--title{
+      position: absolute;
+      background: rgba(blue, 0.4);
+      width: 80%;
+      display: flex;
+      justify-content: end;
+      top: 10%;
+      right: 0;
+      padding: 1rem;
+      opacity: 0;
+      transition: 0.4s all;
+      border-radius: 1rem 0 0 1rem;
     }
 
-    &--title {
-      font-size: 2rem;
-      font-weight: bold;
-      margin-bottom: 1rem;
-    }
+    &--image{
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      border-radius: 0 3rem 0 0;
+      background: pink;
 
-    &--info {
-      font-size: 1.6rem;
-      color: white;
-      line-height: 2rem;
+    }
+  }
+
+  &__item{
+    padding: 2rem 1rem 4rem 1rem;
+    background: map-get(variables.$colorVars, "purplejam");
+    font-size: 80%;
+    border-radius: 0 0 0 3rem;
+
+    &--info{
+      overflow: hidden;
+      overflow-y: scroll;
+      height: 20rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: start;
+      align-items: start;
+      gap: 2rem;
+      padding: 0.4rem;
+
+      &::-webkit-scrollbar{
+        display: none;
+      }
     }
   }
 }
-
