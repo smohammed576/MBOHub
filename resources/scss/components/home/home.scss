@@ -1,55 +1,291 @@
 @use "../../abstracts/variables";
 @use "../../abstracts/mixins";
 
-.home{
-    display: flex;
-    justify-content: space-between;
-    align-items: start;
-    gap: 2rem;
-    width: 100%;
-    padding: 2rem 20rem;
-}
+.home {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 2rem;
+  width: 100%;
+  padding: 2rem 30rem;
+  padding-bottom: 15rem;
 
-.heading{
-    @include mixins.flexBox;
+  .heading {
+    display: flex;
+    @include mixins.events;
     flex-direction: column;
     gap: 2rem;
     width: 60%;
 
-    &__video{
-        width: 100%;
+    &__video {
+      margin-top: 3.9rem;
+      width: 100%;
+      border-radius: 0.5rem;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     }
 
-    &__info{
-        background: map-get(variables.$colorVars, "purplejam");
-        padding: 2rem;
-        border-radius: 0.4rem;
+    &__info {
+      background: map-get(variables.$colorVars, "purplejam");
+      padding: 2rem;
+      border-radius: 0.4rem;
+      color: map-get(variables.$baseVars, "color");
+      font-size: 1.6rem;
+      line-height: 2rem;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     }
+  }
 }
 
-.welcome{
-    width: 100%;
-    padding:  0.2rem;
-    @include mixins.flexBox;
+.events {
+ 
+  width: 100%;
+  padding: 2rem;
+  background: none !important;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+  &__create {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: map-get(variables.$colorVars, "fountainblue");
+    color: white;
+    font-size: 1.8rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 0.5rem;
+    padding: 0.8rem 1.6rem;
+    margin-bottom: 1rem;
+    cursor: pointer;
+    transition: background 0.3s;
+
+    &:hover {
+      background: darken(map-get(variables.$colorVars, "fountainblue"), 10%);
+    }
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+
+    &--input,
+    &--date,
+    &--textarea {
+      width: 100%;
+      padding: 1rem;
+      border: 1px solid map-get(variables.$colorVars, "gray");
+      border-radius: 0.5rem;
+      font-size: 1.6rem;
+    }
+
+    &--textarea {
+      resize: none;
+      height: 10rem;
+    }
+
+    &--submit {
+      background: map-get(variables.$colorVars, "fountainblue");
+      color: white;
+      padding: 1rem;
+      border: none;
+      border-radius: 0.5rem;
+      font-size: 1.6rem;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.3s;
+
+      &:hover {
+        background: darken(map-get(variables.$colorVars, "fountainblue"), 10%);
+      }
+    }
+  }
+
+  &__wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start !important; 
+    align-items: flex-start; 
+    flex-direction: row; 
     gap: 2rem;
+    margin-top: 2rem;
+    width: 100%;
+    min-height: 50rem;
 
-    &__link{
-        @include mixins.flexBox;
-        text-decoration: none;
-        color: map-get(variables.$baseVars, "color");
-    }
+    .tile__wrapper {
+      width: 100%;
+      max-width: 600px;
+      border-radius: 0.5rem;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
 
-    &__item{
-        background: map-get(variables.$colorVars, "orangereds");
-        padding: 1rem;
-        border-radius: 1rem;
+      .row {
+        display: flex;
+        flex-wrap: wrap;
+      }
 
-        &--title{
-            font-size: 100%;
+      .col-12 {
+        width: 100%;
+      }
+
+      .col-md-3 {
+        width: 25%;
+      }
+
+      .col-md-9 {
+        width: 75%;
+      }
+
+      .tile__image {
+        width: 100%;
+        height: 150px;
+        background-size: cover;
+        background-position: center;
+        border-radius: 0.5rem 0 0 0.5rem;
+
+        &.tile__image-wide {
+          display: none;
         }
-        
-        &--info{
-            font-size: 90%;
+
+        @media (min-width: 768px) {
+          &.tile__image-normal {
+            display: none;
+          }
+          &.tile__image-wide {
+            display: block;
+            height: 100%;
+          }
         }
+      }
+
+      .tile__content {
+        padding: 1.5rem;
+        background: map-get(variables.$colorVars, "white");
+        text-align: left;
+
+        .calendar-item__title {
+          font-size: 2rem;
+          font-weight: bold;
+          color: map-get(variables.$colorVars, "purplejam");
+          text-decoration: none;
+          margin-bottom: 1rem;
+        }
+
+        .calendar-item__date {
+          font-size: 1.6rem;
+          color: map-get(variables.$colorVars, "darkgray");
+          margin-bottom: 1rem;
+        }
+
+        .calendar-item__text {
+          font-size: 1.4rem;
+          color: map-get(variables.$baseVars, "color");
+          line-height: 1.8rem;
+
+          display: -webkit-box;
+          -webkit-line-clamp: 3;
+          -webkit-box-orient: vertical;
+          overflow: hidden;
+          text-overflow: ellipsis;
+
+          &.expanded {
+            -webkit-line-clamp: unset;
+            overflow: visible;
+            text-overflow: unset;
+          }
+
+          .learn-more-link {
+            color: map-get(variables.$colorVars, "fountainblue");
+            font-weight: bold;
+            cursor: pointer;
+            text-decoration: none;
+
+            &:hover {
+              text-decoration: underline;
+            }
+          }
+        }
+      }
     }
+  }
+
+  &__empty {
+    font-size: 1.6rem;
+    color: map-get(variables.$colorVars, "gray");
+    text-align: center;
+  }
+
+  &__pagination {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 2rem;
+
+    &--btn {
+      background: none;
+      border: none;
+      font-size: 2rem;
+      color: map-get(variables.$colorVars, "fountainblue");
+      cursor: pointer;
+      transition: color 0.3s;
+
+      &:disabled {
+        color: map-get(variables.$colorVars, "gray");
+        cursor: not-allowed;
+      }
+
+      &:hover:not(:disabled) {
+        color: darken(map-get(variables.$colorVars, "fountainblue"), 10%);
+      }
+
+      &--previous::before {
+        content: "←";
+        margin-right: 0.5rem;
+      }
+
+      &--next::before {
+        content: "→";
+        margin-left: 0.5rem;
+      }
+    }
+  }
 }
+
+.welcome {
+  width: 90%;
+  padding: 2rem 0;
+  @include mixins.flexBox;
+  gap: 2rem;
+
+  &__link {
+    @include mixins.flexBox;
+    text-decoration: none;
+    color: inherit;
+  }
+
+  &__item {
+    background: map-get(variables.$colorVars, "orangereds");
+    padding: 2rem;
+    border-radius: 1rem;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+
+    &:hover {
+      transform: translateY(-0.5rem);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    }
+
+    &--title {
+      font-size: 2rem;
+      font-weight: bold;
+      margin-bottom: 1rem;
+    }
+
+    &--info {
+      font-size: 1.6rem;
+      color: white;
+      line-height: 2rem;
+    }
+  }
+}
+

@@ -6,6 +6,12 @@
     align-items: center;
 }
 
+@mixin events{
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
 @mixin yellowbutton{
     background: map-get(variables.$colorVars, "selectiveyellow");
     color: map-get(variables.$baseVars, "color");
