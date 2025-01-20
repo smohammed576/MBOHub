@@ -1,0 +1,26 @@
+@use "variables";
+@use "mixins";
+
+@media screen and (max-width: 80rem){
+    .home{
+        flex-direction: column;
+        width: 100%;
+
+    }
+
+    .heading{
+        width: 100% !important;
+
+        &__video{
+            width: 100%;
+        }
+    }
+
+    .events{
+        width: 100%;
+    }
+
+    .welcome{
+        flex-direction: column;
+    }
+}

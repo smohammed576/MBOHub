@@ -13,7 +13,6 @@ function Navigation(props){
                 <a className="header__link" href={route('about.about')}>ABOUT</a>
                 <a className="header__link" href={route('contact.contact')}>CONTACT</a>
                 <a href={route('news.index')} className="header__link">NEWS</a>
-                <a href={route('events.index')} className="header__link">EVENTS</a>
                 {
                     user ? 
                         <span className="header__user">

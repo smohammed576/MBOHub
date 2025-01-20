@@ -1,3 +1,4 @@
+import Footer from "./Footer";
 import Navigation from "./Navigation";
 
 export default function GuestLayout({ children }) {
@@ -5,6 +6,7 @@ export default function GuestLayout({ children }) {
         <>
             <Navigation class="header"/>
             <main className="main">{children}</main>
+            <Footer/>
         </>
     );
 }
