@@ -12,7 +12,7 @@ class ContactController extends Controller
     }
 
     public function mail(Request $request){
-        mail('smohammed0576@gmail.com', 'Contact', $request['message']);
+        mail('33046@ma-web.nl', 'Contact', $request['message']);
         return redirect(route('welcome'));
     }
 }
