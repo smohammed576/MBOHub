@@ -5,7 +5,7 @@ body{
     min-height: 100vh;
     background: map-get(variables.$baseVars, "background");
     color: map-get(variables.$baseVars, "color");
-    font-family: map-get(variables.$baseVars, "font");
+    font-family: map-get(variables.$baseVars, "font"), sans-serif;
     font-size: 2rem;
 }
 

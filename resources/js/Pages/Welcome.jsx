@@ -136,7 +136,7 @@ function Welcome() {
                                                                         href={route("events.index")}
                                                                         className="learn-more-link"
                                                                     >
-                                                                        Meer informatie >>
+                                                                        Meer informatie 
                                                                     </a>
                                                                 )}
                                                             </p>

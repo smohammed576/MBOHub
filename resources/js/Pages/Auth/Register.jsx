@@ -25,96 +25,53 @@ export default function Register() {
         <GuestLayout>
             <Head title="Register" />
 
-            <form onSubmit={submit}>
-                <div>
-                    <InputLabel htmlFor="name" value="Name" />
+            <section className="login">
+                <form className="login__form" onSubmit={submit}>
+                    <div className="login__form--wrapper">
+                        <label htmlFor="name" value="Name" className="login__form--label">Name</label>
 
-                    <TextInput
-                        id="name"
-                        name="name"
-                        value={data.name}
-                        className="mt-1 block w-full"
-                        autoComplete="name"
-                        isFocused={true}
-                        onChange={(e) => setData('name', e.target.value)}
-                        required
-                    />
+                        <input type="text" id="name" name="name" value={data.name} autoComplete="name" isFocused={true} onChange={(e) => setData('name', e.target.value)} required className="login__form--input" />
 
-                    <InputError message={errors.name} className="mt-2" />
-                </div>
+                        <InputError message={errors.name} className="login__form--error" />
+                    </div>
 
-                <div className="mt-4">
-                    <InputLabel htmlFor="email" value="Email" />
+                    <div className="login__form--wrapper">
+                        <label htmlFor="email" value="Email" className="login__form--label">Email</label>
 
-                    <TextInput
-                        id="email"
-                        type="email"
-                        name="email"
-                        value={data.email}
-                        className="mt-1 block w-full"
-                        autoComplete="username"
-                        onChange={(e) => setData('email', e.target.value)}
-                        required
-                    />
+                        <input type="text" id="email" name="email" value={data.email} autoComplete="username" onChange={(e) => setData('email', e.target.value)} required className="login__form--input" />
 
-                    <InputError message={errors.email} className="mt-2" />
-                </div>
+                        <InputError message={errors.email} className="login__form--label" />
+                    </div>
 
-                <div className="mt-4">
-                    <InputLabel htmlFor="password" value="Password" />
+                    <div className="login__form--wrapper">
+                        <label htmlFor="password" value="Password" className="login__form--label">Password</label>
 
-                    <TextInput
-                        id="password"
-                        type="password"
-                        name="password"
-                        value={data.password}
-                        className="mt-1 block w-full"
-                        autoComplete="new-password"
-                        onChange={(e) => setData('password', e.target.value)}
-                        required
-                    />
+                        <input type="password" id="password" name="password" value={data.password} autoComplete="new-password" onChange={(e) => setData('password', e.target.value)} required className="login__form--input" />
 
-                    <InputError message={errors.password} className="mt-2" />
-                </div>
+                        <InputError message={errors.password} className="login__form--error" />
+                    </div>
 
-                <div className="mt-4">
-                    <InputLabel
-                        htmlFor="password_confirmation"
-                        value="Confirm Password"
-                    />
+                    <div className="login__form--wrapper">
+                        
+                        <label htmlFor="password_confirmation" value="Confirm Password" className="login__form--label">Password confirmation</label>
 
-                    <TextInput
-                        id="password_confirmation"
-                        type="password"
-                        name="password_confirmation"
-                        value={data.password_confirmation}
-                        className="mt-1 block w-full"
-                        autoComplete="new-password"
-                        onChange={(e) =>
-                            setData('password_confirmation', e.target.value)
-                        }
-                        required
-                    />
+                        <input type="password" id="password_confirmation" name="password_confirmation" value={data.password_confirmation} autoComplete="new-password" onChange={(e) => setData('password_confirmation', e.target.value)} required className="login__form--input" />
 
-                    <InputError
-                        message={errors.password_confirmation}
-                        className="mt-2"
-                    />
-                </div>
 
-                <div className="mt-4 flex items-center justify-end">
-                    <Link
-                        href={route('login')}
-                        className="rounded-md text-sm text-gray-600 underline hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 dark:text-gray-400 dark:hover:text-gray-100 dark:focus:ring-offset-gray-800"
-                    >
-                        Already registered?
-                    </Link>
+                        <InputError
+                            message={errors.password_confirmation}
+                            className="login__form--error"
+                        />
+                    </div>
 
-                    <PrimaryButton className="ms-4" disabled={processing}>
-                        Register
-                    </PrimaryButton>
-                </div>
-            </form>
+                    <div className="login__form--request">
+
+                        <a href={route('login')} className="login__form--request-link">Already registered?</a>
+
+                        <button className="login__form--submit" disabled={processing}>Register</button>
+                    </div>
+                </form>
+            </section>
         </GuestLayout>
     );
 }
